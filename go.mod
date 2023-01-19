@@ -1,4 +1,4 @@
-module github.com/aasidxxx/mutestgo
+module github.com/aasidxxx/mutestgo/cmd/bot
 
 go 1.19
 

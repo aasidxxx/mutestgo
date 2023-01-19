@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/aasidxxx/mutestgo/internal/service/product"
 	"github.com/joho/godotenv"
+	"internal/service/product"
 	"log"
 	"os"
 
