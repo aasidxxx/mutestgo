@@ -13,4 +13,4 @@ build:
 #	migrate -path migrations -database "mysql://root:rootroot@tcp(localhost:3306)/goapi" up
 #
 #migratedown:
-	migrate -path migrations -database "mysql://root:rootroot@tcp(localhost:3306)/goapi" down
+	#migrate -path migrations -database "mysql://root:rootroot@tcp(localhost:3306)/goapi" down
