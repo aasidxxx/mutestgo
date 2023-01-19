@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/joho/godotenv"
-	"internal/service/product"
 	"log"
 	"os"
+	"z1/internal/service/product"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
@@ -62,7 +62,7 @@ func helpCommand(bot *tgbotapi.BotAPI, inputMessage *tgbotapi.Message) {
 	bot.Send(msg)
 }
 
-func listCommand(bot *tgbotapi.BotAPI, inputMessage *tgbotapi.Message, productService product.Service) {
+func listCommand(bot *tgbotapi.BotAPI, inputMessage *tgbotapi.Message, productService *product.Service) {
 
 	outputMsg := "Herer all product: \n\n"
 
