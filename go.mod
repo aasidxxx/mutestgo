@@ -1,4 +1,4 @@
-module z1
+module github.com/aasidxxx/mutestgo
 
 go 1.19
 

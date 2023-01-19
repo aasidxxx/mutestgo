@@ -1,10 +1,10 @@
 package main
 
 import (
+	"github.com/aasidxxx/mutestgo/internal/service/product"
 	"github.com/joho/godotenv"
 	"log"
 	"os"
-	"z1/internal/service/product"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
