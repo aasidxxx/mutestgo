@@ -41,6 +41,8 @@ func main() {
 			switch update.Message.Command() {
 			case "help":
 				helpCommand(bot, update.Message)
+			case "list":
+				listCommand(bot, update.Message)
 			default:
 				defaultBehavior(bot, update.Message)
 			}
@@ -50,7 +52,15 @@ func main() {
 }
 
 func helpCommand(bot *tgbotapi.BotAPI, inputMessage *tgbotapi.Message) {
-	msg := tgbotapi.NewMessage(inputMessage.Chat.ID, "HELP - HELP")
+	msg := tgbotapi.NewMessage(inputMessage.Chat.ID,
+		"/HELP - HELP\n"+
+			"/LIST - LIST",
+	)
+	bot.Send(msg)
+}
+
+func listCommand(bot *tgbotapi.BotAPI, inputMessage *tgbotapi.Message) {
+	msg := tgbotapi.NewMessage(inputMessage.Chat.ID, "listCommand")
 	bot.Send(msg)
 }
 
