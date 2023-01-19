@@ -2,12 +2,18 @@ package main
 
 import (
 	"log"
+	"os"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
+var token = ""
+
 func main() {
-	bot, err := tgbotapi.NewBotAPI("MyAwesomeBotToken")
+
+	token := os.Getenv("TOKEN")
+
+	bot, err := tgbotapi.NewBotAPI(token)
 	if err != nil {
 		log.Panic(err)
 	}
@@ -26,7 +32,7 @@ func main() {
 			log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
 
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text)
-			msg.ReplyToMessageID = update.Message.MessageID
+			//msg.ReplyToMessageID = update.Message.MessageID
 
 			bot.Send(msg)
 		}
