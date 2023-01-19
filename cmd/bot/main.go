@@ -12,8 +12,6 @@ var token = ""
 
 func main() {
 
-	//token := os.Getenv("TOKEN")
-
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
