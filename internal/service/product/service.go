@@ -1,9 +1,8 @@
 package product
 
-type Service struct {
-}
+type Service struct{}
 
-func NewService() {
+func NewService() *Service {
 	return &Service{}
 }
 
