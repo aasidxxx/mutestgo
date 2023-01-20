@@ -44,7 +44,7 @@ func main() {
 	//	if panicValue := recover(); panicValue != nil{
 	//		log.Printf("recover from panic: %v", panicValue)
 	//	}
-	//}
+	//}()
 
 	for update := range updates {
 		if update.Message != nil { // If we got a message

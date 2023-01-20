@@ -10,11 +10,20 @@ func (c *Commander) List(inputMessage *tgbotapi.Message) {
 
 	product := c.productService.List()
 
+	keyboard := tgbotapi.NewReplyKeyboard(
+		tgbotapi.NewKeyboardButtonRow(
+			tgbotapi.NewKeyboardButton("1"),
+			tgbotapi.NewKeyboardButton("2"),
+			tgbotapi.NewKeyboardButton("3"),
+		),
+	)
+
 	for _, p := range product {
 		outputMsg += p.Title
 		outputMsg += "\n"
 	}
 
 	msg := tgbotapi.NewMessage(inputMessage.Chat.ID, outputMsg)
+	msg.ReplyMarkup = keyboard
 	c.bot.Send(msg)
 }
